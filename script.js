@@ -8,11 +8,12 @@ const perguntas = [
     {
         enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e audios hiper-realistas. Qual o primeiro pensamento?",
         alternativas: [
-            "Isso é assustador!",
-            "Isso é maravilhoso!"
+           texto: "Isso é assustador!",
+            afirmacao:"Isso é maravilhoso!"
         ]
     },
     {
+        texto:"isso e maravilhoso!"
         enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Articial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que voce escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude voce toma? ",
         alternativas: [
             "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
@@ -46,7 +47,17 @@ let atual = 0;
 let perguntaAtual;
 
 function mostraPergunta() {
+    perguntaAtual = perguntas [atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    mostraAlternstivss();
+}
+
+function mostraAlternstivas(){
+    for(const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativas;
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
 }
 
 mostraPerguntas()
